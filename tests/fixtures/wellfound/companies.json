@@ -1,0 +1,102 @@
+[
+  {
+    "name": "WF Qualifier",
+    "website": "https://wf-qualifier.example",
+    "slug": "wf-qualifier",
+    "headcount": 42,
+    "ats": "greenhouse",
+    "board": "wf-qualifier",
+    "hq_country": "US"
+  },
+  {
+    "name": "Cabify",
+    "website": "https://cabify.com",
+    "slug": "cabify",
+    "headcount": 80,
+    "ats": "greenhouse",
+    "board": "cabify-wellfound",
+    "hq_country": "ES"
+  },
+  {
+    "name": "Quiet WF",
+    "website": "https://quiet-wf.example",
+    "slug": "quiet-wf",
+    "headcount": 20,
+    "ats": "greenhouse",
+    "board": "quiet-wf",
+    "hq_country": "DE"
+  },
+  {
+    "name": "Struck WF",
+    "website": "https://struck-wf.example",
+    "slug": "struck-wf",
+    "headcount": 15,
+    "ats": "greenhouse",
+    "board": "struck-wf",
+    "hq_country": "US"
+  },
+  {
+    "name": "Consult Co",
+    "website": "https://wf-consult.example",
+    "slug": "wf-consult",
+    "headcount": 30,
+    "kind": "consultancy",
+    "ats": "greenhouse",
+    "board": "wf-consult",
+    "hq_country": "GB"
+  },
+  {
+    "name": "Bank Co",
+    "website": "https://wf-bank.example",
+    "slug": "wf-bank",
+    "headcount": 40,
+    "tags": ["Banking"],
+    "industry": "Fintech",
+    "subindustry": "Banking and Exchange",
+    "ats": "greenhouse",
+    "board": "wf-bank",
+    "hq_country": "US"
+  },
+  {
+    "name": "Sub Co",
+    "website": "https://wf-sub.example",
+    "slug": "wf-sub",
+    "headcount": 25,
+    "kind": "subsidiary",
+    "ats": "greenhouse",
+    "board": "wf-sub",
+    "hq_country": "US"
+  },
+  {
+    "name": "No Board",
+    "website": "https://wf-no-board.example",
+    "slug": "wf-no-board",
+    "headcount": 12,
+    "hq_country": "US"
+  },
+  {
+    "name": "Unknown Headcount",
+    "website": "https://wf-unknown.example",
+    "slug": "wf-unknown",
+    "ats": "greenhouse",
+    "board": "wf-unknown",
+    "hq_country": "US"
+  },
+  {
+    "name": "Too Big",
+    "website": "https://wf-too-big.example",
+    "slug": "wf-too-big",
+    "size": "201-500",
+    "ats": "greenhouse",
+    "board": "wf-too-big",
+    "hq_country": "US"
+  },
+  {
+    "name": "From Url",
+    "website": "https://wf-from-url.example",
+    "slug": "wf-from-url",
+    "employee_count": "11-50",
+    "careers": "https://jobs.ashbyhq.com/wf-from-url",
+    "hq_country": "NL"
+  }
+]
