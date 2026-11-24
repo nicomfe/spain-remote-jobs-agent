@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Small Co",
+    "website": "https://smallco.example",
+    "headcount_url": "https://smallco.example/about",
+    "headcount_file": "about-smallco.html",
+    "ats": "greenhouse",
+    "board": "smallco",
+    "hq_country": "ES"
+  },
+  {
+    "name": "Ashby Start",
+    "website": "https://ashby-start.example",
+    "headcount_url": "https://ashby-start.example/team",
+    "headcount_file": "about-ashby-start.html",
+    "careers": "https://jobs.ashbyhq.com/ashby-start",
+    "hq_country": "NL"
+  },
+  {
+    "name": "Lever Start",
+    "website": "https://lever-start.example",
+    "headcount_url": "https://lever-start.example/about",
+    "headcount_file": "about-lever-start.html",
+    "ats": "lever",
+    "board": "lever-start",
+    "hq_country": "ES"
+  },
+  {
+    "name": "Teamtailor Start",
+    "website": "https://smalltt.example",
+    "headcount_url": "https://smalltt.example/about",
+    "headcount_file": "about-smalltt.teamtailor.com.html",
+    "careers": "https://smalltt.teamtailor.com",
+    "hq_country": "SE"
+  },
+  {
+    "name": "Quiet CC",
+    "website": "https://quiet-cc.example",
+    "headcount_url": "https://quiet-cc.example/about",
+    "headcount_file": "about-quiet-cc.html",
+    "ats": "greenhouse",
+    "board": "quiet-cc",
+    "hq_country": "DE"
+  },
+  {
+    "name": "Unknown Size",
+    "website": "https://unknown-size.example",
+    "headcount_url": "https://unknown-size.example/about",
+    "headcount_file": "about-unknown-size.html",
+    "ats": "greenhouse",
+    "board": "unknown-size",
+    "hq_country": "US"
+  },
+  {
+    "name": "Huge Co",
+    "website": "https://huge-co.example",
+    "headcount_url": "https://huge-co.example/about",
+    "headcount_file": "about-huge-co.html",
+    "ats": "greenhouse",
+    "board": "huge-co",
+    "hq_country": "US"
+  },
+  {
+    "name": "Struck CC",
+    "website": "https://struck-cc.example",
+    "headcount_url": "https://struck-cc.example/about",
+    "headcount_file": "about-struck-cc.html",
+    "ats": "greenhouse",
+    "board": "struck-cc",
+    "hq_country": "US"
+  }
+]
