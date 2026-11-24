@@ -6,7 +6,7 @@
 //     node scripts/discover-wellfound.mjs --live --catalog path/to/wellfound.json
 //
 // Default tests stub fetch (or pass --fixture-dir). --live is the only path
-// that talks to the network. Ticket 13 should call fetchWellfound from
+// that talks to the network. Issue #13 should call fetchWellfound from
 // lib/wellfound.js (and discoverWellfound here) rather than re-fetching.
 
 import { dirname, isAbsolute, join } from "node:path";

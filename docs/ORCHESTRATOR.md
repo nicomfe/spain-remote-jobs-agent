@@ -1,26 +1,26 @@
 # Orchestrator session
 
-This repo is implemented by an orchestrator that delegates tickets and reports results. The orchestrator writes no product code. When a ticket is done, the orchestrator merges that branch into main. Decisions below are closed. Do not reopen them.
+This repo is implemented by an orchestrator that delegates [GitHub issues](https://github.com/nicomfe/spain-remote-jobs-agent/issues) and reports results. The orchestrator writes no product code. When an issue is done, the orchestrator merges that branch into main. Decisions below are closed. Do not reopen them.
 
 ## Quick path
 
 1. Read this file, [GLOSSARY.md](../GLOSSARY.md), and the ADRs in [docs/adr](adr/).
-2. Delegate ticket 01 only. One worktree, one agent.
+2. Delegate [issue #1](https://github.com/nicomfe/spain-remote-jobs-agent/issues/1) only. One worktree, one agent.
 3. Report the checklist, the test command and its result, and the files touched.
-4. Merge the ticket branch into main. The next wave waits for that merge. Do not push unless asked.
+4. Merge the issue branch into main. The next wave waits for that merge. Do not push unless asked.
 
 ## How to delegate
 
-- One agent per ticket, each in its own git worktree.
-- Parallel tickets run only when every `Blocked by` is merged and the agents would not edit the same files.
+- One agent per issue, each in its own git worktree.
+- Parallel issues run only when every `Blocked by` is merged and the agents would not edit the same files.
 - An agent that needs to change the shared `Role` or `Startup` shape stops and reports. One later agent makes that change.
 - Parallel agents do not edit `package.json`. They report the script they need.
-- The orchestrator does not edit product code, docs in `docs/adr/`, this file, or `GLOSSARY.md` to make a ticket pass.
+- The orchestrator does not edit product code, docs in `docs/adr/`, this file, or `GLOSSARY.md` to make an issue pass.
 
 ## Report
 
 ```
-## Ticket NN — <title>
+## Issue #NN — <title>
 Checklist: <passed / failed items>
 Tests: <command> — <pass / fail>
 Files: <paths>
@@ -30,19 +30,19 @@ Blocker: none | <what>
 
 ## Waves
 
-| Wave | Tickets | When |
-|------|---------|------|
-| 0 | 01 skeleton | Now |
-| 1 | 02 ATS crawl | 01 merged |
-| 2 | 03 Spain-employable judge | 02 merged |
-| 3 | 04 hand directory | 03 merged |
-| 4 | 05 YC, 08 `find_jobs` / `get_startup`, 12 daily crawl | 04 merged, in parallel |
-| 5 | 06 Common Crawl, 07 Wellfound | 05 merged, in parallel |
-| 5b | 09 apply | 08 merged |
-| 6 | 10 skill, 11 landing, 14 registry | 09 merged, in parallel |
-| 7 | 13 twice-monthly discovery | 06 and 07 merged |
+| Wave | Issues | When |
+|------|--------|------|
+| 0 | [#1](https://github.com/nicomfe/spain-remote-jobs-agent/issues/1) skeleton | Now |
+| 1 | [#2](https://github.com/nicomfe/spain-remote-jobs-agent/issues/2) ATS crawl | #1 merged |
+| 2 | [#3](https://github.com/nicomfe/spain-remote-jobs-agent/issues/3) Spain-employable judge | #2 merged |
+| 3 | [#4](https://github.com/nicomfe/spain-remote-jobs-agent/issues/4) hand directory | #3 merged |
+| 4 | [#5](https://github.com/nicomfe/spain-remote-jobs-agent/issues/5) YC, [#8](https://github.com/nicomfe/spain-remote-jobs-agent/issues/8) `find_jobs` / `get_startup`, [#12](https://github.com/nicomfe/spain-remote-jobs-agent/issues/12) daily crawl | #4 merged, in parallel |
+| 5 | [#6](https://github.com/nicomfe/spain-remote-jobs-agent/issues/6) Common Crawl, [#7](https://github.com/nicomfe/spain-remote-jobs-agent/issues/7) Wellfound | #5 merged, in parallel |
+| 5b | [#9](https://github.com/nicomfe/spain-remote-jobs-agent/issues/9) apply | #8 merged |
+| 6 | [#10](https://github.com/nicomfe/spain-remote-jobs-agent/issues/10) skill, [#11](https://github.com/nicomfe/spain-remote-jobs-agent/issues/11) landing, [#14](https://github.com/nicomfe/spain-remote-jobs-agent/issues/14) registry | #9 merged, in parallel |
+| 7 | [#13](https://github.com/nicomfe/spain-remote-jobs-agent/issues/13) twice-monthly discovery | #6 and #7 merged |
 
-Ticket 13 also fetches Wellfound. It waits for 07 even though the ticket text only names YC and Common Crawl.
+[Issue #13](https://github.com/nicomfe/spain-remote-jobs-agent/issues/13) also fetches Wellfound. It waits for [#7](https://github.com/nicomfe/spain-remote-jobs-agent/issues/7) even though the issue text only names YC and Common Crawl.
 
 ## Decisions
 
@@ -62,9 +62,9 @@ Ticket 13 also fetches Wellfound. It waits for 07 even though the ticket text on
 | Site build | GitHub Actions builds the image and pushes it to GHCR. The droplet pulls. Actions does not crawl. |
 | Landing | Spanish and English, funneling to `https://spain-remote-agent.nicofetter.com/mcp`. |
 
-Terms live in [GLOSSARY.md](../GLOSSARY.md). Hosting details live in the ADRs. Ticket 01's README describes the product, and points here for implementation.
+Terms live in [GLOSSARY.md](../GLOSSARY.md). Hosting details live in the ADRs. [Issue #1](https://github.com/nicomfe/spain-remote-jobs-agent/issues/1)'s README describes the product, and points here for implementation.
 
-## Checklist before delegating a ticket
+## Checklist before delegating an issue
 
 - [ ] Every `Blocked by` is merged.
 - [ ] No other in-flight agent owns the same files.

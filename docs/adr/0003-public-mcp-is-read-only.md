@@ -8,10 +8,10 @@ The hosted MCP at `https://spain-remote-agent.nicofetter.com/mcp` exposes `find_
 
 ## Considered options
 
-- Serve hiring contacts from the public function, as `spanish-top-tech-companies` does with `hiring_contact`. Ticket 09 says that file is never committed, published, or written into an issue or a log.
+- Serve hiring contacts from the public function, as `spanish-top-tech-companies` does with `hiring_contact`. [Issue #9](https://github.com/nicomfe/spain-remote-jobs-agent/issues/9) says that file is never committed, published, or written into an issue or a log.
 - Run apply on the droplet. SMTP credentials and contacts would sit next to the public process.
 
 ## Consequences
 
-- Ticket 09's tools are stdio-only. They are not registered on the hosted server.
-- Ticket 14's `server.json` remote is the read-only URL above.
+- Issue #9's tools are stdio-only. They are not registered on the hosted server.
+- Issue #14's `server.json` remote is the read-only URL above.

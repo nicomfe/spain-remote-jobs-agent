@@ -19,5 +19,5 @@ The daily crawl in the sibling project runs about 45 minutes and up to 90. Disco
 ## Consequences
 
 - `nicofetter.com` is already on Cloudflare and the apex stays proxied. This tunnel must not capture the apex.
-- Tickets 11, 12, 13, and 14 implement this shape. They do not add a Vercel project, a Vercel cron, or a public port.
+- Issues [#11](https://github.com/nicomfe/spain-remote-jobs-agent/issues/11), [#12](https://github.com/nicomfe/spain-remote-jobs-agent/issues/12), [#13](https://github.com/nicomfe/spain-remote-jobs-agent/issues/13), and [#14](https://github.com/nicomfe/spain-remote-jobs-agent/issues/14) implement this shape. They do not add a Vercel project, a Vercel cron, or a public port.
 - Dev does not start the droplet or the tunnel.
