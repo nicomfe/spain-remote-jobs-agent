@@ -1,6 +1,7 @@
 // Crawl one Greenhouse board and one Ashby board into data/jobs.json.
-// Keep/drop of Spain-employable roles is not this script: every open role the
-// adapters return is written, with a place class and stated pay when present.
+// Adapters return every open role; keep/drop of Spain-employable roles happens
+// here via lib/spain-employable.js. Qualifying roles are written with a place
+// class, eligibility class, evidence, and stated pay when present.
 //
 //     npm run crawl -- --greenhouse cabify --ashby acme --live
 //     npm run crawl -- --greenhouse cabify --ashby acme --fixture-dir tests/fixtures
@@ -13,6 +14,7 @@ import { dirname, isAbsolute, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { CompanySchema } from "../lib/ats/domain/campaign.js";
 import { adapterFor } from "../lib/ats/sources/registry.js";
+import { judgeSpainEmployable, postingTextFromJob } from "../lib/spain-employable.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PERIODS = new Set(["year", "month", "hour"]);
@@ -52,10 +54,20 @@ export function toRole(job) {
   };
 }
 
+export function qualifyRole(job) {
+  const role = toRole(job);
+  const judged = judgeSpainEmployable({
+    place_class: role.place_class,
+    text: postingTextFromJob(job, role.location),
+  });
+  if (!judged) return null;
+  return { ...role, eligibility_class: judged.eligibility_class, evidence: judged.evidence };
+}
+
 export async function listBoard(companyInput, capturedAt = new Date().toISOString()) {
   const company = CompanySchema.parse({ ...companyInput, active: true });
   const jobs = await adapterFor(company.ats).listJobs(company, capturedAt);
-  return jobs.map(toRole);
+  return jobs.map(qualifyRole).filter(Boolean);
 }
 
 export async function crawlBoards(companies, capturedAt) {

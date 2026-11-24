@@ -41,7 +41,8 @@ Discovery starts from a **hand list**. Companies kept with `"via": "hand"` stay 
 | Place | Role |
 |-------|------|
 | `lib/ats/` | Generic ATS adapters (Greenhouse, Ashby, Lever, Teamtailor, and unused big-company adapters). Keep/drop of Spain-employable roles sits outside them. |
-| `scripts/crawl.mjs` | Crawl one Greenhouse board and one Ashby board into `data/jobs.json` |
+| `lib/spain-employable.js` | Spain-employable judge: keep a role with an eligibility class and evidence, or drop it. |
+| `scripts/crawl.mjs` | Crawl one Greenhouse board and one Ashby board into `data/jobs.json` (qualifying roles only) |
 | `data/` | Published JSON (`directory.json`, `jobs.json`) |
 | `mcp/` | MCP server |
 | `skills/` | Agent skill |

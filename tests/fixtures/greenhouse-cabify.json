@@ -22,7 +22,15 @@
       "location": { "name": "Madrid" },
       "absolute_url": "https://job-boards.greenhouse.io/cabify/jobs/1002",
       "first_published": "2026-10-21T10:00:00Z",
-      "content": "<p>Help customers.</p>"
+      "content": "<p>Help customers from the Madrid office.</p>"
+    },
+    {
+      "id": 1003,
+      "title": "Support Specialist",
+      "location": { "name": "Remote, Spain" },
+      "absolute_url": "https://job-boards.greenhouse.io/cabify/jobs/1003",
+      "first_published": "2026-10-22T10:00:00Z",
+      "content": "<p>Help customers remotely from Spain.</p>"
     }
   ]
 }

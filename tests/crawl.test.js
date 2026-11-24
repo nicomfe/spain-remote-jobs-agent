@@ -50,7 +50,7 @@ test("each role has a place class from the location classifier", async () => {
 test("stated pay on a posting is stored; a posting with none is still written", async () => {
   const roles = await withFixtures([greenhouse, ashby], () => crawlBoards([greenhouse, ashby]));
   const paid = roles.find((role) => role.id === "greenhouse:cabify:1001");
-  const unpaid = roles.find((role) => role.id === "greenhouse:cabify:1002");
+  const unpaid = roles.find((role) => role.id === "greenhouse:cabify:1003");
   assert.deepEqual(paid.stated_pay, { min: 60000, max: 80000, currency: "EUR", period: "year" });
   assert.equal(unpaid.stated_pay, null);
   assert.equal(unpaid.title, "Support Specialist");
