@@ -1,0 +1,39 @@
+{
+  "jobs": [
+    {
+      "id": "aaaa-1111",
+      "title": "Staff Engineer",
+      "location": "Remote - Europe",
+      "jobUrl": "https://jobs.ashbyhq.com/acme/aaaa-1111",
+      "applyUrl": "https://jobs.ashbyhq.com/acme/aaaa-1111/application",
+      "descriptionPlain": "Build the product.",
+      "publishedAt": "2026-01-15T00:00:00Z",
+      "workplaceType": "Remote",
+      "isRemote": true,
+      "isListed": true,
+      "compensation": {
+        "compensationTierSummary": "EUR 90k-110k",
+        "summaryComponents": [
+          {
+            "compensationType": "Salary",
+            "interval": "1 year",
+            "currencyCode": "EUR",
+            "minValue": 90000,
+            "maxValue": 110000
+          }
+        ]
+      }
+    },
+    {
+      "id": "bbbb-2222",
+      "title": "Account Executive",
+      "location": "Barcelona, Spain",
+      "jobUrl": "https://jobs.ashbyhq.com/acme/bbbb-2222",
+      "descriptionPlain": "Sell the product.",
+      "publishedAt": "2026-01-16T00:00:00Z",
+      "workplaceType": "Hybrid",
+      "isRemote": false,
+      "isListed": true
+    }
+  ]
+}

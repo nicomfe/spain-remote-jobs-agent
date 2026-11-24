@@ -40,12 +40,19 @@ Discovery starts from a **hand list**. Companies kept with `"via": "hand"` stay 
 
 | Place | Role |
 |-------|------|
-| `lib/ats/` | ATS crawl |
+| `lib/ats/` | Generic ATS adapters (Greenhouse, Ashby, Lever, Teamtailor, and unused big-company adapters). Keep/drop of Spain-employable roles sits outside them. |
+| `scripts/crawl.mjs` | Crawl one Greenhouse board and one Ashby board into `data/jobs.json` |
 | `data/` | Published JSON (`directory.json`, `jobs.json`) |
 | `mcp/` | MCP server |
 | `skills/` | Agent skill |
 | `web/` | Landing page |
-| `tests/` | Tests (`npm test` runs `node --test`) |
+| `tests/` | Tests (`npm test` runs `node --test` on fixtures; no network) |
+
+```bash
+npm test
+npm run crawl -- --greenhouse <slug> --ashby <slug> --live
+npm run crawl -- --greenhouse <slug> --ashby <slug> --fixture-dir tests/fixtures
+```
 
 ## Next step
 

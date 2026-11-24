@@ -1,0 +1,28 @@
+{
+  "jobs": [
+    {
+      "id": 1001,
+      "title": "Backend Engineer",
+      "location": { "name": "Remote, Spain" },
+      "absolute_url": "https://job-boards.greenhouse.io/cabify/jobs/1001",
+      "first_published": "2026-10-20T10:00:00Z",
+      "content": "<p>We build things.</p>",
+      "pay_input_ranges": [
+        {
+          "min_cents": 6000000,
+          "max_cents": 8000000,
+          "currency_type": "EUR",
+          "title": "EUR 60k-80k"
+        }
+      ]
+    },
+    {
+      "id": 1002,
+      "title": "Support Specialist",
+      "location": { "name": "Madrid" },
+      "absolute_url": "https://job-boards.greenhouse.io/cabify/jobs/1002",
+      "first_published": "2026-10-21T10:00:00Z",
+      "content": "<p>Help customers.</p>"
+    }
+  ]
+}
