@@ -1,0 +1,8 @@
+{
+  "greenhouse:cabify:1001": [
+    { "id": "name", "prompt": "Full name", "required": true, "cv_key": "name" },
+    { "id": "email", "prompt": "Email", "required": true, "cv_key": "email" },
+    { "id": "why", "prompt": "Why do you want this role?", "required": true, "cv_key": "why_this_role" },
+    { "id": "salary", "prompt": "Salary expectations", "required": true, "cv_key": "salary_expectation" }
+  ]
+}

@@ -13,3 +13,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Private apply files on the person's machine (never commit)
+/contacts.json
+/cv.json
+/outbox.jsonl
+/sent.json
