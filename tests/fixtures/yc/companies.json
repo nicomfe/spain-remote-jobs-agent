@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Qualifier",
+    "website": "https://qualifier.example",
+    "batch": "W24",
+    "ats": "greenhouse",
+    "board": "qualifier",
+    "hq_country": "US"
+  },
+  {
+    "name": "Quiet YC",
+    "website": "https://quiet-yc.example",
+    "batch": "S23",
+    "ats": "greenhouse",
+    "board": "quiet-yc",
+    "hq_country": "DE"
+  },
+  {
+    "name": "Struck YC",
+    "website": "https://struck-yc.example",
+    "batch": "W22",
+    "ats": "greenhouse",
+    "board": "struck-yc",
+    "hq_country": "US"
+  },
+  {
+    "name": "Consult Co",
+    "website": "https://consult-co.example",
+    "batch": "W21",
+    "kind": "consultancy",
+    "ats": "greenhouse",
+    "board": "consult-co",
+    "hq_country": "GB"
+  },
+  {
+    "name": "Bank Co",
+    "website": "https://bank-co.example",
+    "batch": "S20",
+    "tags": ["Banking"],
+    "industry": "Fintech",
+    "subindustry": "Banking and Exchange",
+    "ats": "greenhouse",
+    "board": "bank-co",
+    "hq_country": "US"
+  },
+  {
+    "name": "Sub Co",
+    "website": "https://sub-co.example",
+    "batch": "W19",
+    "kind": "subsidiary",
+    "ats": "greenhouse",
+    "board": "sub-co",
+    "hq_country": "US"
+  },
+  {
+    "name": "No Board",
+    "website": "https://no-board.example",
+    "batch": "W18",
+    "hq_country": "US"
+  },
+  {
+    "name": "From Url",
+    "website": "https://from-url.example",
+    "batch": "W17",
+    "careers": "https://jobs.ashbyhq.com/from-url",
+    "hq_country": "NL"
+  }
+]

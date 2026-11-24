@@ -1,0 +1,28 @@
+{
+  "jobs": [
+    {
+      "id": 5001,
+      "title": "Staff Engineer",
+      "location": { "name": "Remote, Spain" },
+      "absolute_url": "https://job-boards.greenhouse.io/qualifier/jobs/5001",
+      "first_published": "2026-10-20T10:00:00Z",
+      "content": "<p>Build the product remotely from Spain.</p>",
+      "pay_input_ranges": [
+        {
+          "min_cents": 9000000,
+          "max_cents": 12000000,
+          "currency_type": "EUR",
+          "title": "EUR 90k-120k"
+        }
+      ]
+    },
+    {
+      "id": 5002,
+      "title": "Office Coordinator",
+      "location": { "name": "San Francisco" },
+      "absolute_url": "https://job-boards.greenhouse.io/qualifier/jobs/5002",
+      "first_published": "2026-10-21T10:00:00Z",
+      "content": "<p>Work from the San Francisco office.</p>"
+    }
+  ]
+}
