@@ -5,7 +5,7 @@ The source of truth is the public directory of startups that will employ someone
 ## Quick path
 
 1. Read this file for the product rules.
-2. Open `data/directory.json` and `data/jobs.json` for the published Directory (empty arrays until companies are judged).
+2. Open `data/directory.json` and `data/jobs.json` for the published Directory. The hand seed lives in `data/hand.json`.
 3. Implementers continue in [docs/ORCHESTRATOR.md](docs/ORCHESTRATOR.md). Terms live in [GLOSSARY.md](GLOSSARY.md).
 
 ## Who gets on the Directory
@@ -42,8 +42,9 @@ Discovery starts from a **hand list**. Companies kept with `"via": "hand"` stay 
 |-------|------|
 | `lib/ats/` | Generic ATS adapters (Greenhouse, Ashby, Lever, Teamtailor, and unused big-company adapters). Keep/drop of Spain-employable roles sits outside them. |
 | `lib/spain-employable.js` | Spain-employable judge: keep a role with an eligibility class and evidence, or drop it. |
-| `scripts/crawl.mjs` | Crawl one Greenhouse board and one Ashby board into `data/jobs.json` (qualifying roles only) |
-| `data/` | Published JSON (`directory.json`, `jobs.json`) |
+| `lib/directory.js` | Startup gate, strike-off, exclusion list, and published Directory records. |
+| `scripts/crawl.mjs` | Crawl kept Directory boards into `data/jobs.json` (qualifying roles only) and refresh `data/directory.json`. |
+| `data/` | Published JSON (`directory.json`, `jobs.json`) and the hand seed (`hand.json`, no contacts). |
 | `mcp/` | MCP server |
 | `skills/` | Agent skill |
 | `web/` | Landing page |
@@ -51,6 +52,8 @@ Discovery starts from a **hand list**. Companies kept with `"via": "hand"` stay 
 
 ```bash
 npm test
+npm run crawl -- --hand --live
+npm run crawl -- --hand --fixture-dir tests/fixtures
 npm run crawl -- --greenhouse <slug> --ashby <slug> --live
 npm run crawl -- --greenhouse <slug> --ashby <slug> --fixture-dir tests/fixtures
 ```

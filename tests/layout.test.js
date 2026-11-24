@@ -22,8 +22,12 @@ test("empty layout places exist", () => {
 
   const directoryPath = join(root, "data/directory.json");
   const jobsPath = join(root, "data/jobs.json");
+  const seedPath = join(root, "data/hand.json");
   assert.ok(existsSync(directoryPath), "missing data/directory.json");
   assert.ok(existsSync(jobsPath), "missing data/jobs.json");
-  assert.deepEqual(JSON.parse(readFileSync(directoryPath, "utf8")), []);
+  assert.ok(existsSync(seedPath), "missing data/hand.json");
+  const directory = JSON.parse(readFileSync(directoryPath, "utf8"));
+  assert.ok(Array.isArray(directory));
+  assert.ok(directory.length >= 24, "directory.json should list a few dozen hand-seeded startups");
   assert.deepEqual(JSON.parse(readFileSync(jobsPath, "utf8")), []);
 });

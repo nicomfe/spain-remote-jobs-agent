@@ -1,1 +1,542 @@
-[]
+[
+  {
+    "name": "Cabify",
+    "domain": "cabify.com",
+    "ats": "greenhouse",
+    "board": "cabify",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Factorial",
+    "domain": "factorialhr.com",
+    "ats": "greenhouse",
+    "board": "factorial",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Typeform",
+    "domain": "typeform.com",
+    "ats": "greenhouse",
+    "board": "typeform",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "TravelPerk",
+    "domain": "travelperk.com",
+    "ats": "greenhouse",
+    "board": "travelperk",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Lodgify",
+    "domain": "lodgify.com",
+    "ats": "lever",
+    "board": "lodgify",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Tinybird",
+    "domain": "tinybird.co",
+    "ats": "greenhouse",
+    "board": "tinybird",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Seedtag",
+    "domain": "seedtag.com",
+    "ats": "greenhouse",
+    "board": "seedtag",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Fever",
+    "domain": "feverup.com",
+    "ats": "greenhouse",
+    "board": "fever",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Preply",
+    "domain": "preply.com",
+    "ats": "greenhouse",
+    "board": "preply",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Clarity AI",
+    "domain": "clarity.ai",
+    "ats": "greenhouse",
+    "board": "clarityai",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Paack",
+    "domain": "paack.co",
+    "ats": "greenhouse",
+    "board": "paack",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Genially",
+    "domain": "genial.ly",
+    "ats": "teamtailor",
+    "board": "genially.teamtailor.com",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Holded",
+    "domain": "holded.com",
+    "ats": "teamtailor",
+    "board": "holded.teamtailor.com",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "RavenPack",
+    "domain": "ravenpack.com",
+    "ats": "teamtailor",
+    "board": "ravenpack.teamtailor.com",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "SWORD Health",
+    "domain": "swordhealth.com",
+    "ats": "greenhouse",
+    "board": "swordhealth",
+    "hq_country": "PT",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Amplemarket",
+    "domain": "amplemarket.com",
+    "ats": "greenhouse",
+    "board": "amplemarket",
+    "hq_country": "PT",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Airalo",
+    "domain": "airalo.com",
+    "ats": "lever",
+    "board": "airalo",
+    "hq_country": "SG",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Bitmovin",
+    "domain": "bitmovin.com",
+    "ats": "greenhouse",
+    "board": "bitmovin",
+    "hq_country": "AT",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Ledgy",
+    "domain": "ledgy.com",
+    "ats": "greenhouse",
+    "board": "ledgy",
+    "hq_country": "CH",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Lokalise",
+    "domain": "lokalise.com",
+    "ats": "greenhouse",
+    "board": "lokalise",
+    "hq_country": "LV",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "n8n",
+    "domain": "n8n.io",
+    "ats": "ashby",
+    "board": "n8n",
+    "hq_country": "DE",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "PostHog",
+    "domain": "posthog.com",
+    "ats": "ashby",
+    "board": "posthog",
+    "hq_country": "GB",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Linear",
+    "domain": "linear.app",
+    "ats": "ashby",
+    "board": "linear",
+    "hq_country": "US",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Sanity",
+    "domain": "sanity.io",
+    "ats": "ashby",
+    "board": "sanity",
+    "hq_country": "NO",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Maze",
+    "domain": "maze.co",
+    "ats": "ashby",
+    "board": "mazedesign",
+    "hq_country": "GB",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "RevenueCat",
+    "domain": "revenuecat.com",
+    "ats": "ashby",
+    "board": "revenuecat",
+    "hq_country": "US",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "LangChain",
+    "domain": "langchain.com",
+    "ats": "ashby",
+    "board": "langchain",
+    "hq_country": "US",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Coder",
+    "domain": "coder.com",
+    "ats": "ashby",
+    "board": "coder",
+    "hq_country": "US",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "LocalStack",
+    "domain": "localstack.cloud",
+    "ats": "ashby",
+    "board": "localstack",
+    "hq_country": "CH",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "LiveKit",
+    "domain": "livekit.io",
+    "ats": "ashby",
+    "board": "livekit",
+    "hq_country": "US",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "DuckDuckGo",
+    "domain": "duckduckgo.com",
+    "ats": "ashby",
+    "board": "duck-duck-go",
+    "hq_country": "US",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Qdrant",
+    "domain": "qdrant.tech",
+    "ats": "ashby",
+    "board": "qdrant.tech",
+    "hq_country": "DE",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Customer.io",
+    "domain": "customer.io",
+    "ats": "greenhouse",
+    "board": "customerio",
+    "hq_country": "US",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "PlanetScale",
+    "domain": "planetscale.com",
+    "ats": "greenhouse",
+    "board": "planetscale",
+    "hq_country": "US",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Chainguard",
+    "domain": "chainguard.dev",
+    "ats": "greenhouse",
+    "board": "chainguard",
+    "hq_country": "US",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  },
+  {
+    "name": "Pleo",
+    "domain": "pleo.io",
+    "ats": "greenhouse",
+    "board": "pleo",
+    "hq_country": "DK",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": null,
+    "evidence": null,
+    "last_crawl": null,
+    "open_role_count": 0
+  }
+]

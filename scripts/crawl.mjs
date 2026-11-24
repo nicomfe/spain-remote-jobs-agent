@@ -1,4 +1,5 @@
-// Crawl one Greenhouse board and one Ashby board into data/jobs.json.
+// Crawl kept Directory boards (or one Greenhouse board and one Ashby board)
+// into data/jobs.json.
 // Adapters return every open role; keep/drop of Spain-employable roles happens
 // here via lib/spain-employable.js. Qualifying roles are written with a place
 // class, eligibility class, evidence, and stated pay when present.
@@ -9,17 +10,23 @@
 // Default tests stub fetch (or pass --fixture-dir). --live is the only path
 // that talks to the network.
 
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, isAbsolute, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { CompanySchema } from "../lib/ats/domain/campaign.js";
 import { adapterFor } from "../lib/ats/sources/registry.js";
+import {
+  companiesToCrawl,
+  publishDirectory,
+} from "../lib/directory.js";
 import { judgeSpainEmployable, postingTextFromJob } from "../lib/spain-employable.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PERIODS = new Set(["year", "month", "hour"]);
 
 export const DEFAULT_OUT = join(ROOT, "data/jobs.json");
+export const DEFAULT_DIRECTORY = join(ROOT, "data/directory.json");
+export const DEFAULT_SEED = join(ROOT, "data/hand.json");
 
 /** Pay the board publishes in its own fields, not a guess from the description. */
 export function statedPay(compensation) {
@@ -83,6 +90,25 @@ export function writeJobs(roles, outPath = DEFAULT_OUT) {
   writeFileSync(outPath, `${JSON.stringify(roles, null, 2)}\n`);
 }
 
+export function writeDirectory(records, outPath = DEFAULT_DIRECTORY) {
+  mkdirSync(dirname(outPath), { recursive: true });
+  writeFileSync(outPath, `${JSON.stringify(records, null, 2)}\n`);
+}
+
+export function loadSeed(seedPath = DEFAULT_SEED) {
+  const path = isAbsolute(seedPath) ? seedPath : join(ROOT, seedPath);
+  return JSON.parse(readFileSync(path, "utf8"));
+}
+
+function fixtureFile(fixtureDir, company) {
+  const dir = isAbsolute(fixtureDir) ? fixtureDir : join(ROOT, fixtureDir);
+  return join(dir, `${company.ats}-${company.board}.json`);
+}
+
+export function companiesWithFixtures(fixtureDir, companies) {
+  return companies.filter((company) => existsSync(fixtureFile(fixtureDir, company)));
+}
+
 /** Map adapter list URLs to recorded payloads so crawl can run without the network. */
 export function installFixtureFetch(payloadByUrl) {
   const previous = globalThis.fetch;
@@ -113,7 +139,17 @@ export function loadFixturePayloads(fixtureDir, companies) {
 }
 
 export function parseArgs(argv) {
-  const args = { live: false, fixtureDir: null, out: DEFAULT_OUT, greenhouse: null, ashby: null, names: {} };
+  const args = {
+    live: false,
+    fixtureDir: null,
+    out: DEFAULT_OUT,
+    directoryOut: DEFAULT_DIRECTORY,
+    seed: DEFAULT_SEED,
+    hand: false,
+    greenhouse: null,
+    ashby: null,
+    names: {},
+  };
   for (let i = 0; i < argv.length; i += 1) {
     const token = argv[i];
     const next = () => {
@@ -125,6 +161,9 @@ export function parseArgs(argv) {
     if (token === "--live") args.live = true;
     else if (token === "--fixture-dir") args.fixtureDir = next();
     else if (token === "--out") args.out = next();
+    else if (token === "--directory-out") args.directoryOut = next();
+    else if (token === "--seed") args.seed = next();
+    else if (token === "--hand") args.hand = true;
     else if (token === "--greenhouse") args.greenhouse = next();
     else if (token === "--ashby") args.ashby = next();
     else if (token === "--greenhouse-name") args.names.greenhouse = next();
@@ -144,9 +183,51 @@ export function boardsFromArgs(args) {
   ];
 }
 
+export async function crawlHandDirectory({
+  seed,
+  now = new Date(),
+  lastCrawl = now.toISOString(),
+  fixtureDir = null,
+  live = false,
+} = {}) {
+  const eligible = companiesToCrawl(seed, now);
+  const companies = fixtureDir ? companiesWithFixtures(fixtureDir, eligible) : eligible;
+  let restore;
+  if (fixtureDir) {
+    process.env.ATS_MIN_INTERVAL_MS ??= "0";
+    restore = installFixtureFetch(loadFixturePayloads(fixtureDir, companies));
+  } else if (!live) {
+    throw new Error("pass exactly one of --live or --fixture-dir");
+  }
+  try {
+    const roles = companies.length ? await crawlBoards(companies, lastCrawl) : [];
+    const directory = publishDirectory(seed, roles, {
+      now,
+      lastCrawl,
+      crawledBoards: companies,
+    });
+    return { roles, directory, crawled: companies };
+  } finally {
+    restore?.();
+  }
+}
+
 export async function runCrawl(args) {
   if (args.live === Boolean(args.fixtureDir)) {
     throw new Error("pass exactly one of --live or --fixture-dir");
+  }
+  const fromHand = args.hand || (!args.greenhouse && !args.ashby);
+  if (fromHand) {
+    const seed = Array.isArray(args.seed) ? args.seed : loadSeed(args.seed);
+    const { roles, directory } = await crawlHandDirectory({
+      seed,
+      fixtureDir: args.fixtureDir,
+      live: args.live,
+    });
+    writeJobs(roles, isAbsolute(args.out) ? args.out : join(ROOT, args.out));
+    const directoryOut = args.directoryOut ?? DEFAULT_DIRECTORY;
+    writeDirectory(directory, isAbsolute(directoryOut) ? directoryOut : join(ROOT, directoryOut));
+    return roles;
   }
   const companies = boardsFromArgs(args);
   let restore;
@@ -165,6 +246,8 @@ export async function runCrawl(args) {
 
 function usage() {
   return `Usage:
+  node scripts/crawl.mjs --hand --live
+  node scripts/crawl.mjs --hand --fixture-dir tests/fixtures
   node scripts/crawl.mjs --greenhouse <slug> --ashby <slug> --live
   node scripts/crawl.mjs --greenhouse <slug> --ashby <slug> --fixture-dir tests/fixtures
 `;
