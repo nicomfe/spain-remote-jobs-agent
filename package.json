@@ -5,7 +5,8 @@
   "scripts": {
     "test": "node --test",
     "crawl": "node scripts/crawl.mjs",
-    "mcp": "node mcp/stdio.mjs"
+    "mcp": "node mcp/stdio.mjs",
+    "discover-yc": "node scripts/discover-yc.mjs"
   },
   "dependencies": {
     "fast-xml-parser": "5.12.1",
