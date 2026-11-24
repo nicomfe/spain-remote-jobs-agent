@@ -1,0 +1,82 @@
+[
+  {
+    "id": "greenhouse:cabify:1001",
+    "company": "Cabify",
+    "title": "Backend Engineer",
+    "url": "https://job-boards.greenhouse.io/cabify/jobs/1001",
+    "ats": "greenhouse",
+    "board": "cabify",
+    "location": "Remote, Spain",
+    "place_class": "remote-spain",
+    "stated_pay": {
+      "min": 60000,
+      "max": 80000,
+      "currency": "EUR",
+      "period": "year"
+    },
+    "eligibility_class": "spain-named",
+    "evidence": "Remote, Spain"
+  },
+  {
+    "id": "greenhouse:cabify:1003",
+    "company": "Cabify",
+    "title": "Support Specialist",
+    "url": "https://job-boards.greenhouse.io/cabify/jobs/1003",
+    "ats": "greenhouse",
+    "board": "cabify",
+    "location": "Remote, Spain",
+    "place_class": "remote-spain",
+    "stated_pay": null,
+    "eligibility_class": "spain-named",
+    "evidence": "Remote, Spain"
+  },
+  {
+    "id": "ashby:acme:aaaa-1111",
+    "company": "Acme",
+    "title": "Staff Engineer",
+    "url": "https://jobs.ashbyhq.com/acme/aaaa-1111",
+    "ats": "ashby",
+    "board": "acme",
+    "location": "Remote - Europe",
+    "place_class": "remote-europe",
+    "stated_pay": {
+      "min": 90000,
+      "max": 110000,
+      "currency": "EUR",
+      "period": "year"
+    },
+    "eligibility_class": "eu-eea",
+    "evidence": "Remote - Europe"
+  },
+  {
+    "id": "greenhouse:factorial:2001",
+    "company": "Factorial",
+    "title": "Product Designer",
+    "url": "https://job-boards.greenhouse.io/factorial/jobs/2001",
+    "ats": "greenhouse",
+    "board": "factorial",
+    "location": "Remote, worldwide",
+    "place_class": "remote-global",
+    "stated_pay": {
+      "min": 45000,
+      "max": 55000,
+      "currency": "EUR",
+      "period": "year"
+    },
+    "eligibility_class": "worldwide",
+    "evidence": "Remote, worldwide"
+  },
+  {
+    "id": "greenhouse:typeform:3001",
+    "company": "Typeform",
+    "title": "Contractor Frontend Engineer",
+    "url": "https://job-boards.greenhouse.io/typeform/jobs/3001",
+    "ats": "greenhouse",
+    "board": "typeform",
+    "location": "Remote, contractor",
+    "place_class": "remote-global",
+    "stated_pay": null,
+    "eligibility_class": "contractor",
+    "evidence": "contractor"
+  }
+]

@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "crawl": "node scripts/crawl.mjs"
+    "crawl": "node scripts/crawl.mjs",
+    "mcp": "node mcp/stdio.mjs"
   },
   "dependencies": {
     "fast-xml-parser": "5.12.1",

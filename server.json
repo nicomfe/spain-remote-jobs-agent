@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.nicofetter/spain-remote-jobs-agent",
+  "title": "Spain remote jobs",
+  "description": "Open Spain-employable roles at startups on the public directory, and why each startup is listed.",
+  "version": "0.1.0",
+  "websiteUrl": "https://spain-remote-agent.nicofetter.com/mcp",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://spain-remote-agent.nicofetter.com/mcp"
+    }
+  ]
+}

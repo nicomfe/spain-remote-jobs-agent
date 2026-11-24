@@ -1,0 +1,49 @@
+[
+  {
+    "name": "Cabify",
+    "domain": "cabify.com",
+    "ats": "greenhouse",
+    "board": "cabify",
+    "hq_country": "ES",
+    "via": "hand",
+    "startup_gate": {
+      "evidence": "hand"
+    },
+    "eligibility_class": "spain-named",
+    "evidence": "Remote, Spain",
+    "last_crawl": "2026-11-24T12:00:00.000Z",
+    "open_role_count": 2
+  },
+  {
+    "name": "Acme",
+    "domain": "acme.example",
+    "ats": "ashby",
+    "board": "acme",
+    "hq_country": "US",
+    "via": "yc",
+    "startup_gate": {
+      "evidence": "yc"
+    },
+    "eligibility_class": "eu-eea",
+    "evidence": "Remote - Europe",
+    "last_crawl": "2026-11-24T12:00:00.000Z",
+    "open_role_count": 1
+  },
+  {
+    "name": "Headcount Co",
+    "domain": "headcount.example",
+    "ats": "greenhouse",
+    "board": "headcount-co",
+    "hq_country": "ES",
+    "via": "headcount",
+    "startup_gate": {
+      "evidence": "headcount",
+      "url": "https://headcount.example/about",
+      "headcount": 80
+    },
+    "eligibility_class": "worldwide",
+    "evidence": "Remote, worldwide",
+    "last_crawl": "2026-11-24T12:00:00.000Z",
+    "open_role_count": 1
+  }
+]
