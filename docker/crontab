@@ -1,0 +1,4 @@
+SHELL=/bin/sh
+PATH=/usr/local/bin:/usr/bin:/bin
+# Daily crawl of kept Directory boards (UTC). Public JSON is the mounted volume.
+0 4 * * * /app/scripts/daily-crawl.sh
