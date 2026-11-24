@@ -8,7 +8,8 @@
     "mcp": "node mcp/stdio.mjs",
     "apply": "node mcp/apply-stdio.mjs",
     "discover-yc": "node scripts/discover-yc.mjs",
-    "discover-wellfound": "node scripts/discover-wellfound.mjs"
+    "discover-wellfound": "node scripts/discover-wellfound.mjs",
+    "discover-cc": "node scripts/discover-cc.mjs"
   },
   "dependencies": {
     "fast-xml-parser": "5.12.1",
