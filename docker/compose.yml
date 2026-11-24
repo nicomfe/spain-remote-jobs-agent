@@ -1,0 +1,20 @@
+# Droplet-only. Dev does not start this stack, a droplet, or a tunnel.
+# GitHub Actions builds and pushes the image; the droplet pulls. Actions does not crawl.
+
+services:
+  crawl:
+    image: ghcr.io/nicomfe/spain-remote-jobs-agent:latest
+    mem_limit: 384m
+    restart: unless-stopped
+    environment:
+      PUBLIC_DATA_DIR: /repo/data
+      PUBLIC_REPO: /repo
+      CRAWL_GIT_COMMIT: "1"
+      CRAWL_OPEN_ISSUE: "1"
+    volumes:
+      - public_json:/repo/data
+      - private_bundle:/private:ro
+
+volumes:
+  public_json:
+  private_bundle:
