@@ -6,6 +6,7 @@
     "test": "node --test",
     "crawl": "node scripts/crawl.mjs",
     "mcp": "node mcp/stdio.mjs",
+    "apply": "node mcp/apply-stdio.mjs",
     "discover-yc": "node scripts/discover-yc.mjs"
   },
   "dependencies": {
