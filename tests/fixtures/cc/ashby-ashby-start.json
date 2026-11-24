@@ -1,0 +1,16 @@
+{
+  "jobs": [
+    {
+      "id": "aaaa-1111",
+      "title": "Product Engineer",
+      "location": "Remote - Worldwide",
+      "jobUrl": "https://jobs.ashbyhq.com/ashby-start/aaaa-1111",
+      "applyUrl": "https://jobs.ashbyhq.com/ashby-start/aaaa-1111/application",
+      "descriptionPlain": "Work from anywhere, including Spain.",
+      "publishedAt": "2026-01-15T00:00:00Z",
+      "workplaceType": "Remote",
+      "isRemote": true,
+      "isListed": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "jobs": [
+    {
+      "id": 6001,
+      "title": "Staff Engineer",
+      "location": { "name": "Remote, Spain" },
+      "absolute_url": "https://job-boards.greenhouse.io/smallco/jobs/6001",
+      "first_published": "2026-10-20T10:00:00Z",
+      "content": "<p>Build the product remotely from Spain.</p>"
+    },
+    {
+      "id": 6002,
+      "title": "Office Coordinator",
+      "location": { "name": "Madrid" },
+      "absolute_url": "https://job-boards.greenhouse.io/smallco/jobs/6002",
+      "first_published": "2026-10-21T10:00:00Z",
+      "content": "<p>Work from the Madrid office.</p>"
+    }
+  ]
+}
