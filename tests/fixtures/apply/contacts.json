@@ -1,0 +1,23 @@
+{
+  "as_of": "2026-11-24",
+  "companies": {
+    "cabify": [
+      {
+        "kind": "recruiter",
+        "name": "Ada Example",
+        "role": "Talent Partner",
+        "email": "ada@example.com",
+        "linkedin": null,
+        "jobs": []
+      },
+      {
+        "kind": "hiring_manager",
+        "name": "Bo Example",
+        "role": "Engineering Manager",
+        "email": null,
+        "linkedin": "https://www.linkedin.com/in/bo-example",
+        "jobs": ["greenhouse:cabify:1001"]
+      }
+    ]
+  }
+}
