@@ -15,21 +15,6 @@
     "open_role_count": 0
   },
   {
-    "name": "Factorial",
-    "domain": "factorialhr.com",
-    "ats": "greenhouse",
-    "board": "factorial",
-    "hq_country": "ES",
-    "via": "hand",
-    "startup_gate": {
-      "evidence": "hand"
-    },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
-  },
-  {
     "name": "Typeform",
     "domain": "typeform.com",
     "ats": "greenhouse",
@@ -47,8 +32,8 @@
   {
     "name": "TravelPerk",
     "domain": "travelperk.com",
-    "ats": "greenhouse",
-    "board": "travelperk",
+    "ats": "ashby",
+    "board": "perk",
     "hq_country": "ES",
     "via": "hand",
     "startup_gate": {
@@ -77,7 +62,7 @@
   {
     "name": "Tinybird",
     "domain": "tinybird.co",
-    "ats": "greenhouse",
+    "ats": "lever",
     "board": "tinybird",
     "hq_country": "ES",
     "via": "hand",
@@ -92,8 +77,8 @@
   {
     "name": "Seedtag",
     "domain": "seedtag.com",
-    "ats": "greenhouse",
-    "board": "seedtag",
+    "ats": "teamtailor",
+    "board": "jobs.seedtag.com",
     "hq_country": "ES",
     "via": "hand",
     "startup_gate": {
@@ -108,7 +93,7 @@
     "name": "Fever",
     "domain": "feverup.com",
     "ats": "greenhouse",
-    "board": "fever",
+    "board": "feverup",
     "hq_country": "ES",
     "via": "hand",
     "startup_gate": {
@@ -122,23 +107,8 @@
   {
     "name": "Preply",
     "domain": "preply.com",
-    "ats": "greenhouse",
+    "ats": "ashby",
     "board": "preply",
-    "hq_country": "ES",
-    "via": "hand",
-    "startup_gate": {
-      "evidence": "hand"
-    },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
-  },
-  {
-    "name": "Clarity AI",
-    "domain": "clarity.ai",
-    "ats": "greenhouse",
-    "board": "clarityai",
     "hq_country": "ES",
     "via": "hand",
     "startup_gate": {
@@ -152,23 +122,8 @@
   {
     "name": "Paack",
     "domain": "paack.co",
-    "ats": "greenhouse",
-    "board": "paack",
-    "hq_country": "ES",
-    "via": "hand",
-    "startup_gate": {
-      "evidence": "hand"
-    },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
-  },
-  {
-    "name": "Genially",
-    "domain": "genial.ly",
     "ats": "teamtailor",
-    "board": "genially.teamtailor.com",
+    "board": "careers.paack.co",
     "hq_country": "ES",
     "via": "hand",
     "startup_gate": {
@@ -182,8 +137,8 @@
   {
     "name": "Holded",
     "domain": "holded.com",
-    "ats": "teamtailor",
-    "board": "holded.teamtailor.com",
+    "ats": "recruitee",
+    "board": "holded",
     "hq_country": "ES",
     "via": "hand",
     "startup_gate": {
@@ -527,7 +482,7 @@
   {
     "name": "Pleo",
     "domain": "pleo.io",
-    "ats": "greenhouse",
+    "ats": "ashby",
     "board": "pleo",
     "hq_country": "DK",
     "via": "hand",
