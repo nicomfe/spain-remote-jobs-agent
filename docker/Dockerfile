@@ -13,6 +13,7 @@ COPY lib ./lib
 COPY scripts ./scripts
 COPY mcp ./mcp
 COPY web ./web
+COPY server.json ./server.json
 COPY data/hand.json ./data/hand.json
 COPY docker/crontab /crontab
 
