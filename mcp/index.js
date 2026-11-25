@@ -117,7 +117,10 @@ function roleFilter(job, role) {
 }
 
 function textFilter(job, text) {
-  return contains(job.title, text) || contains(job.company, text) || contains(job.location, text);
+  return contains(job.title, text)
+    || contains(job.company, text)
+    || contains(job.location, text)
+    || contains(job.description, text);
 }
 
 function eligibilityFilter(job, eligibilityClass) {
@@ -239,7 +242,7 @@ const TOOLS = {
       title: "Open roles at kept startups",
       description:
         "Open Spain-employable roles from jobs.json. Filter by role (title text), " +
-        "text (title, company, or location), eligibility class " +
+        "text (title, company, location, or posting text), eligibility class " +
         `(${ELIGIBILITY_CLASSES.join(", ")}), and min_stated_pay when the posting ` +
         "states pay. Roles with no stated pay are left out of a pay filter. When " +
         "nothing matches, empty.filter names the filter that removed every match.",
@@ -249,7 +252,7 @@ const TOOLS = {
           role: { type: "string", description: "Words to find in the role title." },
           text: {
             type: "string",
-            description: "Words to find in the title, company, or location.",
+            description: "Words to find in the title, company, location, or posting text.",
           },
           eligibility_class: {
             type: "string",

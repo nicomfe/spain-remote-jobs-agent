@@ -16,6 +16,8 @@ yarn-error.log*
 
 # Private apply files on the person's machine (never commit)
 /contacts.json
+/cursors.json
+/headcount-notes.json
 /cv.json
 /outbox.jsonl
 /sent.json

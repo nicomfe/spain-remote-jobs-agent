@@ -4,6 +4,7 @@ import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
+import { findJobs } from "../mcp/index.js";
 import {
   crawlBoards,
   installFixtureFetch,
@@ -45,6 +46,14 @@ test("each role has a place class from the location classifier", async () => {
     assert.equal(typeof role.place_class, "string");
     assert.ok(role.place_class.length > 0, `${role.id} missing place class`);
   }
+});
+
+test("a requirement that appears only in the posting is stored and find_jobs can match it", async () => {
+  const roles = await withFixtures([greenhouse, ashby], () => crawlBoards([greenhouse, ashby]));
+  const backend = roles.find((role) => role.id === "greenhouse:cabify:1001");
+  assert.equal(backend.description, "We build things.");
+  const found = findJobs(roles, { text: "build things" });
+  assert.deepEqual(found.jobs.map((job) => job.id), ["greenhouse:cabify:1001"]);
 });
 
 test("stated pay on a posting is stored; a posting with none is still written", async () => {

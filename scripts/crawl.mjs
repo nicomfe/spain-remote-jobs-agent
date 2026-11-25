@@ -2,7 +2,7 @@
 // into data/jobs.json.
 // Adapters return every open role; keep/drop of Spain-employable roles happens
 // here via lib/spain-employable.js. Qualifying roles are written with a place
-// class, eligibility class, evidence, and stated pay when present.
+// class, eligibility class, evidence, the posting text, and stated pay when present.
 //
 //     npm run crawl -- --greenhouse cabify --ashby acme --live
 //     npm run crawl -- --greenhouse cabify --ashby acme --fixture-dir tests/fixtures
@@ -57,6 +57,7 @@ export function toRole(job) {
     board: job.board,
     location: locationLabel(job),
     place_class: job.locationClass,
+    description: job.descriptionText ?? "",
     stated_pay: statedPay(job.compensation),
   };
 }

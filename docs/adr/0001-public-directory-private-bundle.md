@@ -4,7 +4,7 @@ status: accepted
 
 # Public directory in git, private bundle encrypted
 
-The product is a public directory, and the hiring contacts are people. `directory.json` and `jobs.json` stay plaintext in this repo. Contacts, crawl cursors, and headcount notes live in one AES-256 bundle (openssl `aes-256-cbc`, PBKDF2, 600000 iterations, SHA-256), the same shape as `private_data.sh` in `spanish-top-tech-companies`. The original sits on the droplet, mounted only into the crawl container. The ciphertext mirror is the private repo [nicomfe/spain-remote-jobs-agents-data](https://github.com/nicomfe/spain-remote-jobs-agents-data). `DATA_KEY` is on the droplet and in the operator's keychain. It is not in GitHub Actions, not in the web container, and not in Cloudflare.
+The product is a public directory, and the hiring contacts are people. `directory.json` and `jobs.json` stay plaintext in this repo. Contacts (`contacts.json`), crawl cursors (`cursors.json`), and headcount notes (`headcount-notes.json`) live in one AES-256 bundle. `scripts/private_data.sh` pulls and pushes that bundle. (openssl `aes-256-cbc`, PBKDF2, 600000 iterations, SHA-256), the same shape as `private_data.sh` in `spanish-top-tech-companies`. The original sits on the droplet, mounted only into the crawl container. The ciphertext mirror is the private repo [nicomfe/spain-remote-jobs-agents-data](https://github.com/nicomfe/spain-remote-jobs-agents-data). `DATA_KEY` is on the droplet and in the operator's keychain. It is not in GitHub Actions, not in the web container, and not in Cloudflare.
 
 ## Considered options
 

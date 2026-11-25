@@ -11,7 +11,7 @@
     },
     "eligibility_class": null,
     "evidence": null,
-    "last_crawl": null,
+    "last_crawl": "2026-11-25T14:57:14.268Z",
     "open_role_count": 0
   },
   {
@@ -24,10 +24,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "spain-named",
+    "evidence": "Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 2
   },
   {
     "name": "TravelPerk",
@@ -41,7 +41,7 @@
     },
     "eligibility_class": null,
     "evidence": null,
-    "last_crawl": null,
+    "last_crawl": "2026-11-25T14:57:14.268Z",
     "open_role_count": 0
   },
   {
@@ -54,10 +54,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "spain-named",
+    "evidence": "Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 2
   },
   {
     "name": "Tinybird",
@@ -69,10 +69,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "spain-named",
+    "evidence": "Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 1
   },
   {
     "name": "Seedtag",
@@ -86,7 +86,7 @@
     },
     "eligibility_class": null,
     "evidence": null,
-    "last_crawl": null,
+    "last_crawl": "2026-11-25T14:57:14.268Z",
     "open_role_count": 0
   },
   {
@@ -99,10 +99,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "spain-named",
+    "evidence": "Remote Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 4
   },
   {
     "name": "Preply",
@@ -114,10 +114,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "worldwide",
+    "evidence": "Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 1
   },
   {
     "name": "Paack",
@@ -131,7 +131,7 @@
     },
     "eligibility_class": null,
     "evidence": null,
-    "last_crawl": null,
+    "last_crawl": "2026-11-25T14:57:14.268Z",
     "open_role_count": 0
   },
   {
@@ -146,7 +146,7 @@
     },
     "eligibility_class": null,
     "evidence": null,
-    "last_crawl": null,
+    "last_crawl": "2026-11-25T14:57:14.268Z",
     "open_role_count": 0
   },
   {
@@ -161,7 +161,7 @@
     },
     "eligibility_class": null,
     "evidence": null,
-    "last_crawl": null,
+    "last_crawl": "2026-11-25T14:57:14.268Z",
     "open_role_count": 0
   },
   {
@@ -176,7 +176,7 @@
     },
     "eligibility_class": null,
     "evidence": null,
-    "last_crawl": null,
+    "last_crawl": "2026-11-25T14:57:14.268Z",
     "open_role_count": 0
   },
   {
@@ -189,10 +189,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "eu-eea",
+    "evidence": "Remote, EMEA",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 8
   },
   {
     "name": "Airalo",
@@ -204,10 +204,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "spain-named",
+    "evidence": "Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 12
   },
   {
     "name": "Bitmovin",
@@ -219,10 +219,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "eu-eea",
+    "evidence": "EMEA Remote",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 2
   },
   {
     "name": "Ledgy",
@@ -234,10 +234,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "spain-named",
+    "evidence": "Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 1
   },
   {
     "name": "Lokalise",
@@ -249,10 +249,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "spain-named",
+    "evidence": "Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 4
   },
   {
     "name": "n8n",
@@ -264,10 +264,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "spain-named",
+    "evidence": "Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 31
   },
   {
     "name": "PostHog",
@@ -279,10 +279,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "eu-eea",
+    "evidence": "EMEA Remote",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 1
   },
   {
     "name": "Linear",
@@ -294,10 +294,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "eu-eea",
+    "evidence": "Europe",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 10
   },
   {
     "name": "Sanity",
@@ -311,7 +311,7 @@
     },
     "eligibility_class": null,
     "evidence": null,
-    "last_crawl": null,
+    "last_crawl": "2026-11-25T14:57:14.268Z",
     "open_role_count": 0
   },
   {
@@ -324,10 +324,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "spain-named",
+    "evidence": "Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 3
   },
   {
     "name": "RevenueCat",
@@ -339,10 +339,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "eu-eea",
+    "evidence": "Europe",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 10
   },
   {
     "name": "LangChain",
@@ -356,7 +356,7 @@
     },
     "eligibility_class": null,
     "evidence": null,
-    "last_crawl": null,
+    "last_crawl": "2026-11-25T14:57:14.268Z",
     "open_role_count": 0
   },
   {
@@ -369,10 +369,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "eu-eea",
+    "evidence": "Europe",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 1
   },
   {
     "name": "LocalStack",
@@ -384,10 +384,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "spain-named",
+    "evidence": "Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 2
   },
   {
     "name": "LiveKit",
@@ -399,10 +399,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "eu-eea",
+    "evidence": "Europe",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 4
   },
   {
     "name": "DuckDuckGo",
@@ -414,10 +414,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "spain-named",
+    "evidence": "Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 1
   },
   {
     "name": "Qdrant",
@@ -429,10 +429,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "spain-named",
+    "evidence": "Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 5
   },
   {
     "name": "Customer.io",
@@ -444,10 +444,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "eu-eea",
+    "evidence": "Remote EMEA",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 4
   },
   {
     "name": "PlanetScale",
@@ -459,10 +459,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "eu-eea",
+    "evidence": "Remote - EMEA",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 1
   },
   {
     "name": "Chainguard",
@@ -474,10 +474,10 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "spain-named",
+    "evidence": "Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 2
   },
   {
     "name": "Pleo",
@@ -489,9 +489,9 @@
     "startup_gate": {
       "evidence": "hand"
     },
-    "eligibility_class": null,
-    "evidence": null,
-    "last_crawl": null,
-    "open_role_count": 0
+    "eligibility_class": "spain-named",
+    "evidence": "Spain",
+    "last_crawl": "2026-11-25T14:57:14.268Z",
+    "open_role_count": 2
   }
 ]

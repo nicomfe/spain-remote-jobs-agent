@@ -40,6 +40,10 @@ _Avoid_: matching job, Spain job
 The pay figure a posting itself prints, stored on that role.
 _Avoid_: salary, median, compensation band
 
+**Posting text**:
+The words of the open role, stored on that role. A text search matches a requirement named there and not in the title.
+_Avoid_: HTML, job body
+
 **Hand company**:
 A company a person put on the directory (`via: hand`). It stays through a stretch with no qualifying role.
 _Avoid_: seed, manual entry

@@ -16,7 +16,7 @@ The **Startup gate** asks whether the company is a startup. A consultancy, a ban
 
 The second gate is a **Qualifying role**: an open role that is **Spain-employable**. The **Eligibility class** on that role is one of `spain-named`, `eu-eea`, `worldwide`, and `contractor`. A bare "Remote", a US-only line, a country list that omits Spain, and an on-site Spain office leave the company off the list.
 
-**Stated pay** is only what a posting states, attached to the job, never a company median.
+**Stated pay** is only what a posting states, attached to the job, never a company median. The **posting text** is stored on the role, so a search can match a requirement the title does not name.
 
 ## What this repo publishes
 
@@ -44,6 +44,7 @@ Discovery starts from a **hand list**. Companies kept with `"via": "hand"` stay 
 | `lib/spain-employable.js` | Spain-employable judge: keep a role with an eligibility class and evidence, or drop it. |
 | `lib/directory.js` | Startup gate, strike-off, exclusion list, and published Directory records. |
 | `scripts/crawl.mjs` | Crawl kept Directory boards into `data/jobs.json` (qualifying roles only) and refresh `data/directory.json`. |
+| `scripts/private_data.sh` | Encrypt contacts, cursors, and headcount notes into the private repo. The local ciphertext checkout is the sibling directory `spain-remote-jobs-agent-data`. `jobs.json` and `directory.json` stay here. |
 | `data/` | Published JSON (`directory.json`, `jobs.json`) and the hand seed (`hand.json`, no contacts). |
 | `mcp/` | MCP server |
 | `skills/` | Agent skill |

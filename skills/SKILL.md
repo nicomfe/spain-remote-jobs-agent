@@ -13,7 +13,7 @@ Public MCP (`https://spain-remote-agent.nicofetter.com/mcp`) is read-only: `find
 
 ### `find_jobs` (public MCP)
 
-Call when looking up qualifying roles: open Spain-employable postings already on disk. Optional filters: `role` (title), `text` (title, company, or location), `eligibility_class` (`spain-named`, `eu-eea`, `worldwide`, `contractor`), `min_stated_pay` (stated pay on the posting; roles with no stated pay drop out of a pay filter).
+Call when looking up qualifying roles: open Spain-employable postings already on disk. Optional filters: `role` (title), `text` (title, company, location, or posting text), `eligibility_class` (`spain-named`, `eu-eea`, `worldwide`, `contractor`), `min_stated_pay` (stated pay on the posting; roles with no stated pay drop out of a pay filter).
 
 Do not call it to explain why a company is listed, and do not treat it as apply.
 

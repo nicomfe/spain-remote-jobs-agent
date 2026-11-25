@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "spain--startup-remote-jobs": {
+      "command": "npm",
+      "args": ["run", "mcp"],
+      "cwd": "/Users/nicofetter/proj/find-jobs-research/spain-remote-jobs-agent"
+    }
+  }
+}
