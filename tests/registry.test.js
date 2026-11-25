@@ -19,6 +19,12 @@ test("a change to server.json is published to the MCP registry", () => {
   const workflow = readFileSync(join(root, ".github/workflows/mcp-registry.yml"), "utf8");
   assert.match(workflow, /paths:[\s\S]*server\.json/);
   assert.match(workflow, /node scripts\/publish-mcp\.mjs --live/);
+  assert.match(workflow, /MCP_PRIVATE_KEY: \$\{\{ secrets\.MCP_PRIVATE_KEY \}\}/);
+  assert.match(
+    workflow,
+    /MCP_PUBLISHER_VERSION: v1\.8\.16/,
+    "v1.8.1 ignores MCP_PRIVATE_KEY; login needs v1.8.16 or newer",
+  );
 });
 
 test("the published name is the server name, and the published version matches server.json", () => {

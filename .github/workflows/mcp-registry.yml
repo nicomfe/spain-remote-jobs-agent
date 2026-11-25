@@ -15,7 +15,7 @@ permissions:
   contents: read
 
 env:
-  MCP_PUBLISHER_VERSION: v1.8.1
+  MCP_PUBLISHER_VERSION: v1.8.16
 
 jobs:
   publish:
