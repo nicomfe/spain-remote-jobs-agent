@@ -6,7 +6,7 @@ The source of truth is the public directory of startups that will employ someone
 
 1. Read this file for the product rules.
 2. Open `data/directory.json` and `data/jobs.json` for the published Directory. The hand seed lives in `data/hand.json`.
-3. Implementers continue in [docs/ORCHESTRATOR.md](docs/ORCHESTRATOR.md). Terms live in [GLOSSARY.md](GLOSSARY.md).
+3. Implementers load [.cursor/skills/orchestrator/SKILL.md](.cursor/skills/orchestrator/SKILL.md). Terms live in [GLOSSARY.md](GLOSSARY.md).
 
 ## Who gets on the Directory
 
@@ -61,4 +61,4 @@ npm run crawl -- --greenhouse <slug> --ashby <slug> --fixture-dir tests/fixtures
 
 ## Next step
 
-Closed implementation decisions are in [docs/ORCHESTRATOR.md](docs/ORCHESTRATOR.md). Do not reopen them here.
+Closed implementation decisions are in [.cursor/skills/orchestrator/references/decisions.md](.cursor/skills/orchestrator/references/decisions.md). Do not reopen them here.

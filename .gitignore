@@ -6,6 +6,7 @@
 
 # misc
 .DS_Store
+.atl/
 .env
 .env.development
 .env.production
@@ -21,3 +22,5 @@ yarn-error.log*
 /cv.json
 /outbox.jsonl
 /sent.json
+# Local AI runtime state
+.atl/
