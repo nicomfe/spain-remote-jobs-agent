@@ -1,11 +1,13 @@
 # Droplet-only. Dev does not start this stack, a droplet, or a tunnel.
 # GitHub Actions builds and pushes the image; the droplet pulls. Actions does not crawl.
+# The edge network is created on the droplet outside this file.
 
 services:
   crawl:
     image: ghcr.io/nicomfe/spain-remote-jobs-agent:latest
     mem_limit: 384m
     restart: unless-stopped
+    env_file: /etc/spain-remote-agent/crawl.env
     environment:
       PUBLIC_DATA_DIR: /repo/data
       PUBLIC_REPO: /repo
@@ -14,6 +16,27 @@ services:
     volumes:
       - public_json:/repo/data
       - private_bundle:/private:ro
+    networks:
+      - edge
+
+  mcp:
+    image: ghcr.io/nicomfe/spain-remote-jobs-agent:latest
+    command: ["node", "mcp/http.mjs"]
+    mem_limit: 192m
+    restart: unless-stopped
+    environment:
+      MCP_DIRECTORY: /repo/data/directory.json
+      MCP_JOBS: /repo/data/jobs.json
+      PORT: "8080"
+    volumes:
+      - public_json:/repo/data:ro
+    networks:
+      - edge
+
+networks:
+  edge:
+    external: true
+    name: edge
 
 volumes:
   public_json:
