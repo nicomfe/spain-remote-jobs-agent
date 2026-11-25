@@ -11,6 +11,8 @@ RUN npm ci --omit=dev
 
 COPY lib ./lib
 COPY scripts ./scripts
+COPY mcp ./mcp
+COPY web ./web
 COPY data/hand.json ./data/hand.json
 COPY docker/crontab /crontab
 
