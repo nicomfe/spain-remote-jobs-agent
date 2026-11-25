@@ -46,6 +46,13 @@ jobs:
       - name: Authenticate to MCP Registry
         env:
           MCP_PRIVATE_KEY: ${{ secrets.MCP_PRIVATE_KEY }}
-        run: ./mcp-publisher login dns --domain nicofetter.com
+        run: |
+          set -euo pipefail
+          key="$(printf '%s' "$MCP_PRIVATE_KEY" | tr -d ':[:space:]')"
+          if ! printf '%s' "$key" | grep -Eq '^[0-9a-fA-F]{64}$'; then
+            echo "MCP_PRIVATE_KEY must be 64 hex chars after removing colons and whitespace" >&2
+            exit 1
+          fi
+          MCP_PRIVATE_KEY="$key" ./mcp-publisher login dns --domain nicofetter.com
       - name: Publish server to MCP Registry
         run: PATH="$PWD:$PATH" node scripts/publish-mcp.mjs --live

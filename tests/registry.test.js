@@ -20,6 +20,7 @@ test("a change to server.json is published to the MCP registry", () => {
   assert.match(workflow, /paths:[\s\S]*server\.json/);
   assert.match(workflow, /node scripts\/publish-mcp\.mjs --live/);
   assert.match(workflow, /MCP_PRIVATE_KEY: \$\{\{ secrets\.MCP_PRIVATE_KEY \}\}/);
+  assert.match(workflow, /tr -d ':\[:space:\]'/);
   assert.match(
     workflow,
     /MCP_PUBLISHER_VERSION: v1\.8\.16/,
