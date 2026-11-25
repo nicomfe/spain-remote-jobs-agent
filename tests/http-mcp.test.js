@@ -137,6 +137,7 @@ test("Dockerfile copies mcp and web but not the data files", () => {
   const dockerfile = readFileSync(join(root, "docker/Dockerfile"), "utf8");
   assert.match(dockerfile, /^COPY mcp\b/m);
   assert.match(dockerfile, /^COPY web\b/m);
+  assert.match(dockerfile, /^COPY server\.json\b/m);
   assert.doesNotMatch(dockerfile, /^\s*COPY\s+.*(?:jobs|directory)\.json/m);
   assert.match(dockerfile, /CMD \["cron", "-f"\]/);
 });
