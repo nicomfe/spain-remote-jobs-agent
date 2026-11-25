@@ -19,7 +19,6 @@ Load when coordinating implementation: delegating a unit of work, opening a work
 - Parallel agents do not edit the package manifest (`package.json`). They report the script they need.
 - The orchestrator does not edit product code, architecture decision records, the glossary, or this skill to make a unit pass.
 - Do not push unless asked.
-- Closed decisions in `references/decisions.md` stay closed. Replace that file when copying this skill to another project.
 
 ## Decision Gates
 
@@ -33,7 +32,7 @@ Load when coordinating implementation: delegating a unit of work, opening a work
 
 ## Execution Steps
 
-1. Read this skill. Read `GLOSSARY.md` and `docs/adr/` when this project has them. Read [references/decisions.md](references/decisions.md).
+1. Read this skill. Read `GLOSSARY.md` when this project has it.
 2. Delegate one unit. One worktree, one agent. Name the directories it may create and the files it must not edit. Tell it to run the tests and to stop on a contract change.
 3. Require the report in the output contract.
 4. Merge the branch into main. The next wave waits for that merge.
@@ -53,6 +52,4 @@ Blocker: none | <what>
 
 ## References
 
-- [references/decisions.md](references/decisions.md) — closed decisions for this project. Replace the file when reusing the skill.
 - `GLOSSARY.md` — project terms, when present.
-- `docs/adr/` — hosting and data decisions, when present.

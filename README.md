@@ -58,7 +58,3 @@ npm run crawl -- --hand --fixture-dir tests/fixtures
 npm run crawl -- --greenhouse <slug> --ashby <slug> --live
 npm run crawl -- --greenhouse <slug> --ashby <slug> --fixture-dir tests/fixtures
 ```
-
-## Next step
-
-Closed implementation decisions are in [.cursor/skills/orchestrator/references/decisions.md](.cursor/skills/orchestrator/references/decisions.md). Do not reopen them here.
