@@ -1,10 +1,37 @@
 # Spain remote jobs
 
-The source of truth is the public directory of startups that will employ someone remotely from Spain. This repo publishes that Directory as JSON, crawls the boards of companies already kept, and later hosts a read-only agent surface.
+The public directory lists startups that will employ someone remotely from Spain. A read-only MCP lets an agent search those roles and see why a startup is listed.
+
+## Use the MCP
+
+Connect a client that speaks [streamable HTTP](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports) to:
+
+`https://spain-remote-agent.nicofetter.com/mcp`
+
+The same host serves a short landing page at `https://spain-remote-agent.nicofetter.com/`. English and Spanish: `/en.html` and `/es.html`.
+
+```json
+{
+  "mcpServers": {
+    "spain-remote-jobs": {
+      "url": "https://spain-remote-agent.nicofetter.com/mcp"
+    }
+  }
+}
+```
+
+Two tools, both read-only:
+
+| Tool | Ask with | You get |
+|------|----------|---------|
+| `find_jobs` | Optional `role` (words in the title), `text` (title, company, location, or posting text), `eligibility_class` (`spain-named`, `eu-eea`, `worldwide`, `contractor`), `min_stated_pay` | Open Spain-employable roles. A pay filter drops roles that do not state pay. |
+| `get_startup` | `name` or `domain` | Why that startup is on the directory, with the stored evidence. |
+
+Hiring contacts and apply tools are not on this server. Apply stays on the person's own machine.
 
 ## Quick path
 
-1. Read this file for the product rules.
+1. Connect the MCP above to look up roles.
 2. Open `data/directory.json` and `data/jobs.json` for the published Directory. The hand seed lives in `data/hand.json`.
 3. Implementers continue in [docs/ORCHESTRATOR.md](docs/ORCHESTRATOR.md). Terms live in [GLOSSARY.md](GLOSSARY.md).
 
@@ -24,7 +51,7 @@ The second gate is a **Qualifying role**: an open role that is **Spain-employabl
 |---------|------------|
 | Published Directory | `data/directory.json` and `data/jobs.json` in this repo. Hiring contacts are kept private. |
 | Crawl | A pass over the boards of companies already kept on the Directory. |
-| Agent | Find roles, see why a startup is listed, apply only after a yes, at most 3 messages a day, with hiring contacts kept private. Apply is not hosted on the public MCP. |
+| Agent | Public MCP at `https://spain-remote-agent.nicofetter.com/mcp`: `find_jobs` and `get_startup` only. Apply stays on the person's machine. |
 
 ## Hand companies and strike-off
 
