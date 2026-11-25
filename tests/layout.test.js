@@ -12,7 +12,22 @@ function assertDir(relativePath) {
   assert.ok(statSync(path).isDirectory(), `${relativePath} is not a directory`);
 }
 
-test("empty layout places exist", () => {
+const ROLE_FIELDS = [
+  "id",
+  "company",
+  "title",
+  "url",
+  "ats",
+  "board",
+  "location",
+  "place_class",
+  "description",
+  "stated_pay",
+  "eligibility_class",
+  "evidence",
+];
+
+test("published layout places exist", () => {
   assertDir("lib/ats");
   assertDir("mcp");
   assertDir("skills");
@@ -29,5 +44,12 @@ test("empty layout places exist", () => {
   const directory = JSON.parse(readFileSync(directoryPath, "utf8"));
   assert.ok(Array.isArray(directory));
   assert.ok(directory.length >= 24, "directory.json should list a few dozen hand-seeded startups");
-  assert.deepEqual(JSON.parse(readFileSync(jobsPath, "utf8")), []);
+  const jobs = JSON.parse(readFileSync(jobsPath, "utf8"));
+  assert.ok(Array.isArray(jobs));
+  assert.ok(jobs.length > 0, "jobs.json should list qualifying roles");
+  for (const role of jobs) {
+    for (const field of ROLE_FIELDS) {
+      assert.ok(Object.hasOwn(role, field), `${role.id ?? "role"} missing ${field}`);
+    }
+  }
 });
