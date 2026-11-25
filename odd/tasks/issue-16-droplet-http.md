@@ -25,7 +25,7 @@ S8. Assumption: one process serves `POST /mcp` (stateless streamable HTTP, reusi
 
 ## Tasks
 
-- T1 | S5 S6 S7 | done | HTTP `/mcp` + static `web/` in the image, compose services with no host ports, host pull script, tests. Parent re-ran `node --test tests/http-mcp.test.js tests/daily-crawl.test.js tests/mcp.test.js`: 26 pass, 0 fail. Risk: none (`mcp/index.js` untouched). Full `npm test` still has one pre-existing failure: `empty layout places exist` expects `data/jobs.json` to be `[]`, and that file is unchanged from `main` with 114 roles.
+- T1 | S5 S6 S7 | done | commit 0328e75. HTTP `/mcp` + static `web/` in the image, compose services with no host ports, host pull script, tests. Parent re-ran `node --test tests/http-mcp.test.js tests/daily-crawl.test.js tests/mcp.test.js`: 26 pass, 0 fail. Risk: none (`mcp/index.js` untouched). Full `npm test` still has one pre-existing failure: `empty layout places exist` expects `data/jobs.json` to be `[]`, and that file is unchanged from `main` with 114 roles.
 - T2 | S1 S3 S4 S7 | blocked | Droplet Docker, tunnel, Caddy outside this compose, firewall, GHCR login, crawl env file. Stop until the operator supplies each secret in S4.
 
 ## Log
