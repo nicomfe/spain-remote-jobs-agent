@@ -1,7 +1,8 @@
 // Scheduled crawl of kept Directory boards.
 // The droplet cron calls this with --live. Tests pass --fixture-dir.
-// A failed crawl opens a GitHub issue; the body must not print contacts,
-// cursors, or DATA_KEY. GitHub is not called unless CRAWL_OPEN_ISSUE=1.
+// A successful crawl commits the public JSON, rebases it onto origin main, and pushes.
+// A failed crawl opens a GitHub issue only when CRAWL_OPEN_ISSUE=1.
+// The issue body must not print contacts, cursors, or DATA_KEY.
 
 import { spawnSync } from "node:child_process";
 import { join } from "node:path";
@@ -46,23 +47,60 @@ function argvFromEnv(argv) {
   return next;
 }
 
-function defaultGitCommit(files) {
-  if (process.env.CRAWL_GIT_COMMIT !== "1") return;
-  const repo = process.env.PUBLIC_REPO || ".";
-  const add = spawnSync("git", ["-C", repo, "add", "--", ...files], { encoding: "utf8" });
+function gitEnv(env, token) {
+  const child = { ...env, GIT_TERMINAL_PROMPT: "0" };
+  if (token) child.GH_TOKEN = token;
+  return child;
+}
+
+function runGit(args, env) {
+  return spawnSync("git", args, { encoding: "utf8", env });
+}
+
+function credentialArgs(repo, child) {
+  const remote = runGit(["-C", repo, "remote", "get-url", "origin"], child);
+  if (!(child.GH_TOKEN && /^https?:\/\//.test(remote.stdout.trim()))) return ["-C", repo];
+  return [
+    "-C",
+    repo,
+    "-c",
+    "credential.helper=",
+    "-c",
+    'credential.helper=!f() { echo "username=x-access-token"; echo "password=$GH_TOKEN"; }; f',
+  ];
+}
+
+export function commitTrackedFiles(files, { repo = process.env.PUBLIC_REPO || ".", env = process.env } = {}) {
+  if (env.CRAWL_GIT_COMMIT !== "1") return;
+  const child = gitEnv(env, env.GH_TOKEN || env.GITHUB_TOKEN || "");
+  const add = runGit(["-C", repo, "add", "--", ...files], child);
   if (add.status !== 0) {
     throw new Error(add.stderr || add.stdout || "git add failed");
   }
-  const diff = spawnSync("git", ["-C", repo, "diff", "--cached", "--quiet"], { encoding: "utf8" });
+  const diff = runGit(["-C", repo, "diff", "--cached", "--quiet"], child);
   if (diff.status === 0) return;
-  const commit = spawnSync(
-    "git",
+  const commit = runGit(
     ["-C", repo, "commit", "-m", "chore: daily crawl of kept boards"],
-    { encoding: "utf8" },
+    child,
   );
   if (commit.status !== 0) {
     throw new Error(commit.stderr || commit.stdout || "git commit failed");
   }
+  const pulled = runGit(
+    [...credentialArgs(repo, child), "pull", "--rebase", "--autostash", "origin", "main"],
+    child,
+  );
+  if (pulled.status !== 0) {
+    throw new Error(pulled.stderr || pulled.stdout || "git pull --rebase failed");
+  }
+  const pushed = runGit([...credentialArgs(repo, child), "push", "origin", "HEAD:main"], child);
+  if (pushed.status !== 0) {
+    throw new Error(pushed.stderr || pushed.stdout || "git push failed");
+  }
+}
+
+function defaultGitCommit(files) {
+  commitTrackedFiles(files);
 }
 
 function defaultOpenIssue(issue) {

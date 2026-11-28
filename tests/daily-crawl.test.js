@@ -1,10 +1,12 @@
 import assert from "node:assert/strict";
-import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 import {
+  commitTrackedFiles,
   crawlNpmArgs,
   runDailyCrawl,
   sanitizeIssueBody,
@@ -134,6 +136,80 @@ test("Docker cron is daily, caps crawl memory, and mounts public JSON as a volum
   assert.doesNotMatch(compose, /DATA_KEY/);
   assert.doesNotMatch(dockerfile, /^\s*COPY\s+.*(?:jobs|directory)\.json/m);
   assert.doesNotMatch(dockerfile, /DATA_KEY/);
+});
+
+test("a crawl commit is pushed to origin main", () => {
+  const dir = mkdtempSync(join(tmpdir(), "daily-crawl-push-"));
+  const origin = join(dir, "origin.git");
+  const repo = join(dir, "repo");
+  const git = (args) => {
+    const result = spawnSync("git", args, { encoding: "utf8" });
+    assert.equal(result.status, 0, result.stderr || result.stdout);
+  };
+  git(["init", "--bare", "-b", "main", origin]);
+  git(["init", "-b", "main", repo]);
+  git(["-C", repo, "config", "user.name", "spain-remote-agent"]);
+  git(["-C", repo, "config", "user.email", "crawl@localhost"]);
+  mkdirSync(join(repo, "data"));
+  writeFileSync(join(repo, "data/jobs.json"), "[]\n");
+  git(["-C", repo, "add", "data/jobs.json"]);
+  git(["-C", repo, "commit", "-m", "init"]);
+  git(["-C", repo, "remote", "add", "origin", origin]);
+  git(["-C", repo, "push", "origin", "HEAD:main"]);
+  writeFileSync(join(repo, "data/jobs.json"), "[{\"id\":\"new\"}]\n");
+
+  commitTrackedFiles(["data/jobs.json"], {
+    repo,
+    env: { ...process.env, CRAWL_GIT_COMMIT: "1", GH_TOKEN: "should-not-leak" },
+  });
+
+  const log = spawnSync("git", ["--git-dir", origin, "log", "-1", "--format=%s"], { encoding: "utf8" });
+  assert.equal(log.status, 0, log.stderr);
+  assert.equal(log.stdout.trim(), "chore: daily crawl of kept boards");
+  const shown = spawnSync("git", ["--git-dir", origin, "show", "HEAD:data/jobs.json"], { encoding: "utf8" });
+  assert.equal(shown.stdout.includes("should-not-leak"), false);
+  assert.match(shown.stdout, /"id":"new"/);
+});
+
+test("a crawl commit rebases onto origin main before pushing", () => {
+  const dir = mkdtempSync(join(tmpdir(), "daily-crawl-rebase-"));
+  const origin = join(dir, "origin.git");
+  const repo = join(dir, "repo");
+  const other = join(dir, "other");
+  const git = (args) => {
+    const result = spawnSync("git", args, { encoding: "utf8" });
+    assert.equal(result.status, 0, result.stderr || result.stdout);
+  };
+  git(["init", "--bare", "-b", "main", origin]);
+  git(["init", "-b", "main", repo]);
+  git(["-C", repo, "config", "user.name", "spain-remote-agent"]);
+  git(["-C", repo, "config", "user.email", "crawl@localhost"]);
+  mkdirSync(join(repo, "data"));
+  writeFileSync(join(repo, "data/jobs.json"), "[]\n");
+  writeFileSync(join(repo, "data/hand.json"), "[]\n");
+  git(["-C", repo, "add", "data/jobs.json", "data/hand.json"]);
+  git(["-C", repo, "commit", "-m", "init"]);
+  git(["-C", repo, "remote", "add", "origin", origin]);
+  git(["-C", repo, "push", "origin", "HEAD:main"]);
+  git(["clone", origin, other]);
+  git(["-C", other, "config", "user.name", "spain-remote-agent"]);
+  git(["-C", other, "config", "user.email", "crawl@localhost"]);
+  writeFileSync(join(other, "README.md"), "ahead\n");
+  git(["-C", other, "add", "README.md"]);
+  git(["-C", other, "commit", "-m", "code on main"]);
+  git(["-C", other, "push", "origin", "HEAD:main"]);
+  writeFileSync(join(repo, "data/jobs.json"), "[{\"id\":\"new\"}]\n");
+  spawnSync("rm", [join(repo, "data/hand.json")]);
+
+  commitTrackedFiles(["data/jobs.json"], {
+    repo,
+    env: { ...process.env, CRAWL_GIT_COMMIT: "1" },
+  });
+
+  const log = spawnSync("git", ["--git-dir", origin, "log", "--format=%s", "-2"], { encoding: "utf8" });
+  assert.equal(log.status, 0, log.stderr);
+  assert.equal(log.stdout, "chore: daily crawl of kept boards\ncode on main\n");
+  assert.equal(spawnSync("test", ["!", "-e", join(repo, "data/hand.json")]).status, 0);
 });
 
 test("GitHub Actions builds GHCR and does not crawl", () => {
